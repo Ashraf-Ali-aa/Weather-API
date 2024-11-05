@@ -1,6 +1,6 @@
 name: API Tests
 
-on: [push, pull_request]
+on: [pull_request]
 
 jobs:
   test:
@@ -19,7 +19,7 @@ jobs:
 
       - name: Run tests
         env:
-          WEATHER_API_KEY: ${{ secrets.WHETHER_API }}
+          WEATHER_API: ${{ secrets.WEATHER_API }}
         run: npm run test:coverage
 
       - name: Upload test report
@@ -28,3 +28,4 @@ jobs:
         with:
           name: test-report
           path: test-report.html
+
